@@ -1,0 +1,15 @@
+# macOS Finder metadata
+.DS_Store
+
+# Obsidian local cache / UI state (device-specific)
+.obsidian/cache/
+.obsidian/workspace.json
+.obsidian/workspaces.json
+
+# Local vault trash
+.trash/
+
+# Local database files (e.g., plugins)
+things.db
+*.db-shm
+*.db-wal
