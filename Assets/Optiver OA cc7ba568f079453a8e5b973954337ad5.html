@@ -1,0 +1,1132 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Optiver OA</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cc7ba568-f079-453a-8e5b-973954337ad5" class="page sans"><header><h1 class="page-title">Optiver OA</h1><p class="page-description"></p></header><div class="page-body"><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><mark class="highlight-teal"><strong>Numbers Station</strong></mark></summary><div class="indented"><p id="599f904a-e0ab-4ebc-a174-d7861edc80a5" class="">A friend asks you to tune into a local numbers station, a radio station that is publishing a coded message. They say they&#x27;ve had a tip on how to decipher the messages the station is publishing, but want your help in writing a program that will do the deciphering. You start listening to the station and notice that in each voice sample the person reads out a number follow by letter or a hyphen -. The numbers don&#x27;t seem to be in any particular order…
+
+You decide that you&#x27;re going to help write the program, so your friend shares what the tip was</p><ul id="9d2fd498-8024-4b57-a840-c97c1e543577" class="bulleted-list"><li style="list-style-type:disc">Every sample will contain a number which can be used to put the messages in order (sequence ID).</li></ul><ul id="a48bf606-095e-4754-a738-7e1353233c44" class="bulleted-list"><li style="list-style-type:disc">Every message only contains the letters a-z.</li></ul><ul id="fa82e9d2-befe-4f32-a027-3bca33f0a4f7" class="bulleted-list"><li style="list-style-type:disc">A complete message is a continuous set of characters surrounded by two - characters.</li></ul><ul id="5331d8de-6118-4827-b1c7-b00f33575e25" class="bulleted-list"><li style="list-style-type:disc">Sometimes a message is never completed (missing sequence IDs).</li></ul><ul id="b2f3bde3-77fa-47e4-9dc4-bc922b2a1b93" class="bulleted-list"><li style="list-style-type:disc">Once you&#x27;ve completed a full message, all messages completed later with a lower sequence ID are no longer useful and shouldn&#x27;t be output (you should only output the latest message).</li></ul><ul id="ccc2bbd5-6533-4e9d-9363-b58c17367084" class="bulleted-list"><li style="list-style-type:disc">If two full messages are completed at the same time, then you should output only the message containing higher sequence IDs.</li></ul><ul id="a2b1ee5c-faef-447a-afcb-7cc7ad06e447" class="bulleted-list"><li style="list-style-type:disc">A full broadcast can contain multiple complete messages and you will need to output each of them.</li></ul><h2 id="21e64241-8a65-4003-a017-56eea9d70a36" class=""><mark class="highlight-pink">Function Description</mark></h2><p id="6d78f706-6913-434e-85ff-d15d294229d9" class="">You are to implement the function ProcessSample that takes:</p><ul id="464ae986-1a8c-4bff-b1b0-14a713a05f88" class="bulleted-list"><li style="list-style-type:disc">a sequence number for the sample,</li></ul><ul id="2f4f5347-a728-4f8b-8763-98005c869a85" class="bulleted-list"><li style="list-style-type:disc">the character for the sample.</li></ul><p id="37c72fe1-43cf-443a-a0aa-a1662047b850" class="">Whenever a full message is completed you should call the OnMessageComplete function with the complete message. </p><h2 id="3c11d8fa-8424-49b8-b203-22e2d5caff43" class=""><mark class="highlight-pink">Constraints</mark></h2><ul id="2ea5da0f-d1c1-4fb2-b315-58c3b77cf406" class="bulleted-list"><li style="list-style-type:disc"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span><span>﻿</span></span> &lt; sequence id &lt; <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>64</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{64} - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">64</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span></li></ul><ul id="5662634b-e0ca-4a6e-bc5d-5486cf95d180" class="bulleted-list"><li style="list-style-type:disc">number of messages ≥ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span></li></ul><h2 id="9dd4fd8e-7318-45ae-992e-1f4b6b955c63" class=""><mark class="highlight-pink">Input Format</mark></h2><p id="595324a9-6a9b-4164-933d-c7fa5ad30c1c" class="">For each line, the first string is the sequence number associated with the sample, the second character is the character related to the sequence number.</p><div id="c93e0dbb-3d91-4e06-8158-0cd1605f05b7" class="column-list"><div id="b7afdc39-f83f-41d5-91d8-61fbea721d25" style="width:83.33333333333333%" class="column"><h3 id="6d4e4c79-ed8f-40b9-aa26-3bf107312d43" class=""><mark class="highlight-pink">Sample Case 0</mark></h3><p id="37679bb0-18e8-4da6-a2c3-dd0b36d0c5a0" class=""><mark class="highlight-brown"><strong>Sample Input</strong></mark></p><blockquote id="1e2c1d77-b3f4-4890-89a0-18487e6c658d" class="">1 -
+2 h
+3 e 
+4 l
+5 l
+6 o
+7 -
+8 b</blockquote><p id="5990fe07-a753-43aa-b5ef-7ab59ce9a773" class=""><mark class="highlight-brown"><strong>Sample Output</strong></mark></p><blockquote id="5519cc92-13c5-4a5a-b51f-49042133a0e6" class="">hello</blockquote><p id="55e1484a-df0f-42cc-9c1e-6ef16f695442" class=""><mark class="highlight-brown"><strong>Explanation</strong></mark></p><p id="71d1e9ba-1e65-417a-a922-f5964a541dff" class="">When the samples are placed in order according to their sequence IDs we get the following, -hello-b. There is one complete message here (between the - characters) so it is output.</p><p id="5b5c8506-22bf-41f6-b227-3037b5204a75" class="">
+</p></div><div id="1e407c62-97d4-4303-a923-07e10f19c940" style="width:100%" class="column"><h3 id="a1970fcd-c1c5-491b-9733-d09904b51e3f" class=""><mark class="highlight-pink">Sample Case 1</mark></h3><p id="482dd193-5baf-4bad-aba9-f28c17500a30" class=""><mark class="highlight-brown"><strong>Sample Input</strong></mark></p><blockquote id="bf239a1c-91d9-4a84-b077-1947c3925c85" class="">1 -
+2 b
+3 y 
+5 -
+6 h
+7 i
+8 -
+4 e</blockquote><p id="ea44b4aa-6d36-46b4-8d18-996d352badc2" class=""><mark class="highlight-brown"><strong>Sample Output</strong></mark></p><blockquote id="e3f895f5-c6e3-45b7-a00c-a1b96e723223" class="">hi</blockquote><p id="82dd638b-a530-4474-a33d-53d1f823a866" class=""><mark class="highlight-brown"><strong>Explanation</strong></mark></p><p id="2fea9fd0-f316-4930-883a-755b15a60516" class="">When the samples are placed in order according to their sequence IDs we get the following, -bye-hi-. This broadcast contains two complete messages (bye and hi), but because the second complete message (hi) was completed before the first (bye), we only output the later message (hi).</p></div><div id="ba25f63d-0f58-4bb3-87d8-9f1f98ece601" style="width:100%" class="column"><h3 id="2d50c4b3-95f0-4eae-a638-0ed27b3b7247" class=""><mark class="highlight-pink">Sample Case 2</mark></h3><p id="8913a586-3d38-402b-8ac0-9ef13731bb7c" class=""><mark class="highlight-brown"><strong>Sample Input</strong></mark></p><blockquote id="d8f6cebd-8986-4407-bf04-edb3b7786078" class="">1 -
+2 h
+3 e 
+4 l
+5 l
+6 o
+7 -
+8 b
+9 y
+10 e
+11 -</blockquote><p id="f75e1402-4ea1-47c4-859a-c4fda1385e98" class=""><mark class="highlight-brown"><strong>Sample Output</strong></mark></p><blockquote id="501dbfd6-730a-466c-b977-e19a9b9e155f" class="">hello
+bye</blockquote><p id="fee08253-fe1c-480d-a156-bb99975f3ff6" class=""><mark class="highlight-brown"><strong>Explanation</strong></mark></p><p id="ad7dde1a-9578-40a6-8956-e4aa0a12eb5d" class="">When the samples are placed in order according to their sequence IDs we get the following, -hello-bye-. This broadcast contains two complete messages (hello and bye), since the first complete message (hello) is finished first, we output it. Then when sequence id 11 - completes the second message (bye) we output that as well.</p></div></div><pre id="03c9a086-5440-4384-862a-c415abb5588b" class="code"><code>class MessageDecoder:
+    def __init__(self):
+        self.samples = {}
+        self.messagesIDs = []
+
+    def ProcessSample(self, id, char):
+        self.samples[id] = char
+        if char == &#x27;-&#x27;:
+            self.messagesIDs.append(id)
+            self.messagesIDs.sort()
+            self.highestID = 0
+
+        messages = []
+        if len(self.messagesIDs) &gt;= 2:
+            for i in range(len(self.messagesIDs)-1):
+                startID = self.messagesIDs[i]
+                endID = self.messagesIDs[i+1]
+                if endID - startID == 1:
+                    continue
+
+                isMessage = True
+                for i in range(startID + 1, endID):
+                    if i not in self.samples:
+                        isMessage = False
+                        break
+                if isMessage:
+                    message = &#x27;&#x27;.join([self.samples[id] for id in range(startID + 1, endID)])
+                    messages.append(message)
+                    self.highestID = endID
+
+        
+        if len(messages) &gt; 1:
+            self.OnMessageComplete(messages[1])
+        elif len(messages) == 1:
+            self.OnMessageComplete(messages[0])
+
+        for id in list(self.samples.keys()):
+            if id &lt; self.highestID:
+                del self.samples[id]
+                if id in self.messagesIDs:
+                    self.messagesIDs.remove(id)
+
+    def OnMessageComplete(self, message):
+        print(message)
+
+
+# TEST
+def main():
+    decoder = MessageDecoder()
+    input = [(1, &#x27;-&#x27;),
+             (2, &#x27;h&#x27;),
+             (3, &#x27;e&#x27;),
+             (4, &#x27;l&#x27;),
+             (5, &#x27;l&#x27;),
+             (6, &#x27;o&#x27;),
+             (7, &#x27;-&#x27;),
+             (8, &#x27;b&#x27;),
+             (9, &#x27;y&#x27;),
+             (10, &#x27;e&#x27;),
+             (11, &#x27;-&#x27;)]
+
+    for seq_id, char in input:
+        decoder.ProcessSample(seq_id, char)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><mark class="highlight-teal">Worst Trade Reporter</mark></summary><div class="indented"><p id="9829d1c0-d047-4034-b854-129a21f7613d" class="">You are tasked with building a tool to analyze the profitability of trades (also known as &quot;profit and loss&quot; or PnL). For the purpose of this problem, every trade has the following attributes:</p><ul id="14f4b6c4-93d4-4190-a423-be402dae083a" class="bulleted-list"><li style="list-style-type:disc">TradelD- unique identifier for the trade,</li></ul><ul id="5fd74593-201e-4dd1-b743-880cdada777b" class="bulleted-list"><li style="list-style-type:disc">InstrumentID - identifier of the instrument that has been traded,</li></ul><ul id="9a014aeb-d56e-4436-a6d8-f6174439b378" class="bulleted-list"><li style="list-style-type:disc">Buy/Sell - flag to indicate whether you bought or sold the instrument,</li></ul><ul id="944e13f9-ee5a-45d8-9827-cbd3fbe80318" class="bulleted-list"><li style="list-style-type:disc">Price - the price at which the instrument has been traded,</li></ul><ul id="5ead1cf3-77e9-4d75-9228-9e2eadb4853b" class="bulleted-list"><li style="list-style-type:disc">Volume - the quantity of the instrument that has been traded.</li></ul><p id="2b3b3abc-c81d-4243-8b4f-f0016a3931a8" class="">
+</p><p id="b2e253d6-a7b9-4e33-8d46-043b1a87d427" class="">Consider a trade with the following attributes:</p><ul id="48743349-5c69-4da9-afde-a6c02c6e5205" class="bulleted-list"><li style="list-style-type:disc">TradeID = 5,</li></ul><ul id="2cfe9e95-f666-46c6-9ff6-7a43ca2dfd07" class="bulleted-list"><li style="list-style-type:disc">InstrumentID = Google,</li></ul><ul id="9b85510c-8179-4d65-a97b-1ee662e28e39" class="bulleted-list"><li style="list-style-type:disc">Buy/Sell = BUY,</li></ul><ul id="13a8fa1f-7b14-41b5-858d-7f8e7110f66a" class="bulleted-list"><li style="list-style-type:disc">Price = 500,</li></ul><ul id="5a226e29-0c32-494a-a896-29796acd7576" class="bulleted-list"><li style="list-style-type:disc">Volume = 20</li></ul><p id="44c2ac00-1be0-42ab-855e-0e2932af0467" class="">It means that you bought 20 lots of Google stock for 500 dollars and the identifier for the trade is 5.</p><p id="150f6471-b956-4dad-8399-59d4d692e121" class="">Note that trades have a TradeID because there can be multiple trades with the same InstrumentID, Buy/Sell, Price and Volume attributes</p><h2 id="459f6f36-20ee-4b3e-abb8-fc636ad94f54" class=""><mark class="highlight-pink">Problem Statement</mark></h2><p id="4eb36c53-33f1-49b8-b5b5-c54773f98719" class="">In this task, you receive a stream of N instructions. Each instruction can be an update or a query.</p><p id="4256e9e5-ee5e-4e67-94b6-418d2f81f5ff" class="">An update can be of 2 kinds:</p><ul id="8ef1fb75-03a0-4638-874f-58d2aeb5de0b" class="bulleted-list"><li style="list-style-type:disc">Trade - indicates that a trade has happened.
+Attributes: <em>TradeID</em>, <em>InstrumentID BUY/SELL</em>, <em>Price</em>, and <em>Volume</em>`.</li></ul><ul id="a8d0c13a-b274-4012-a43e-a8a7ddba2978" class="bulleted-list"><li style="list-style-type:disc">Price - indicates that the true value of an instrument has been updated. 
+Attributes: <em>InstrumentID </em>and <em>Price</em>.</li></ul><p id="d0320912-d5c3-4b95-9f5d-a10365f97fcb" class="">There is only 1 kind of query:</p><ul id="b2ae5ff9-406f-45b5-b421-a6bd82d3f9f8" class="bulleted-list"><li style="list-style-type:disc">Worst Trade - output the TradelD of the worst trade for an instrument. Attributes: InstrumentID.</li></ul><p id="4e3b9822-d437-4875-b7bb-d73093234b82" class="">The WorstTrade is the trade with the highest loss made per-lot of the trade. To calculate PnL of a trade the latest price update for an instrument is used as the true value of the instrument.</p><ul id="51da3cf3-51b1-4a5a-a282-9b3d515e7ebf" class="bulleted-list"><li style="list-style-type:disc">If you sell 2 Google stocks for 500 each, and had the latest price update saying Google is worth 400, the PnL for the trade is (500 - 400) * 2 = 200.</li></ul><ul id="647cab06-a347-429b-bca6-995d07054486" class="bulleted-list"><li style="list-style-type:disc">If you later get a price update saying Google is worth 600, the PnL for the same trade is (500-600) * 2 = -200</li></ul><p id="b54517b4-1645-4cfc-8775-c2b2b6826558" class="">In the example above, initially we make a profit-per-lot of 200 / 2 = 100, and after the price update it is a loss-per-lot of 200 / 2 = 100.</p><ul id="e7d3de68-147a-4d60-bbee-5e7848e667f3" class="bulleted-list"><li style="list-style-type:disc">In case of ties for the worst trade, output the latest one.</li></ul><ul id="15076dee-55e7-419c-9a5b-e6e5d7ed04bd" class="bulleted-list"><li style="list-style-type:disc">In case there are no trades that result in a loss for the instrument, output NO BAD TRADES.</li></ul><h2 id="bb13d6ed-a788-4498-b677-8d1a23f803d9" class=""><mark class="highlight-pink">Function Description</mark></h2><p id="4eca620e-c689-4259-a310-dc8b04cb8744" class="">Your task is to implement a class that provides methods ProcessTrade, ProcessPriceUpdate, OutputWorstTrade. These method calls correspond to the instructions described above with the method arguments corresponding to the update or query attributes.</p><p id="60a6a555-6377-4033-9c53-6dbcf6999568" class="">Constraints</p><ul id="1ba1f080-cff8-41fa-b0fb-97a5de1efc5b" class="bulleted-list"><li style="list-style-type:disc"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span> ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span>, <em>TradeId</em>, Price, Volume ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></li></ul><ul id="4d843139-e87e-415e-babd-9debc6f0fa04" class="bulleted-list"><li style="list-style-type:disc">It is guaranteed that price update for an instrument is available before first trade on that instrument.</li></ul><h2 id="9a19ca11-da89-476d-acca-c790ca5481b8" class=""><mark class="highlight-pink">Input Format For Custom Testing</mark></h2><p id="5c277a51-68c3-4c78-a71b-5d6fa47008ee" class="">Input to the program is specified using a simple text format. The format and details of parsing are not relevant to answering the question but custom input can be used to help with development and debugging.</p><p id="51da7084-99d0-4c10-9851-0078e486ce8d" class="">The first line of input contains an integer <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span> that denotes the number of instructions. Each of the <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span> subsequent lines contains either an update or a query in the format below:</p><p id="e46d527c-a73c-4793-93fa-cbe9fa8a7147" class="">Updates:</p><ul id="563a775a-421d-49fb-b1a0-b9339194af7b" class="bulleted-list"><li style="list-style-type:disc">TRADE &lt;TradeID&gt; &lt;InstrumentID&gt; &lt;BUY/SELL&gt; &lt;Price&gt; &lt;Volume&gt;</li></ul><ul id="f5db8213-256d-4af0-862b-ba81fae3f9ef" class="bulleted-list"><li style="list-style-type:disc">PRICE &lt;InstrumentID&gt; &lt;Price&gt;</li></ul><p id="b8adaa32-a003-4f96-934c-8b815965743f" class="">Query:</p><ul id="49c6424e-afbc-459c-817a-05f8502f0a1e" class="bulleted-list"><li style="list-style-type:disc">WORST TRADE &lt;InstrumentID&gt;</li></ul><p id="b1d0490b-94ba-4bf7-b94b-363581c4d08b" class="">Some example inputs and their expected outputs are described below.</p><div id="34fa99ef-c233-4ca6-828b-c770bb65c895" class="column-list"><div id="d66dac5b-363c-462c-a077-eaa82c52ef9c" style="width:81.25%" class="column"><h3 id="1b0895ca-f42b-4f47-a0e9-615757552bdc" class=""><mark class="highlight-pink">Sample Case 1</mark></h3><p id="1617a413-5cb7-402e-8fb6-76305c8e1792" class=""><mark class="highlight-brown"><strong>Sample input for custom testing:</strong></mark></p><blockquote id="02496ad3-dd6f-44c8-935a-e358ce16e5e9" class="">6
+PRICE Facebook 80
+PRICE Apple 120
+TRADE 100 Apple SELL 90 2
+TRADE 10 Facebook BUY 100 4 
+WORST TRADE Facebook
+WORST TRADE Apple</blockquote><p id="795b74dc-beec-4ee7-ab97-81523ab9eb41" class=""><strong><mark class="highlight-brown">Expected output:</mark></strong></p><blockquote id="0dbaa71d-92a2-496d-98cf-b0fc76014973" class="">10
+100</blockquote><p id="c85141cd-5f89-4963-ae70-5273fd3a9001" class=""><mark class="highlight-brown"><strong>Explanation:</strong></mark></p><p id="ece9722b-38dc-4e35-8b5f-70d5c6fc5d5b" class="">There are 2 instruments (Apple and Facebook), each of which has 1 trade. There are 2 queries, 1 for each instrument.</p><ol type="1" id="eb7f01f1-4bd9-48ae-9ed9-e195808a1d2c" class="numbered-list" start="1"><li>PNL from tradeID 100: (90 - 120) * 2 = -60<ul id="d7e6933f-58ff-443a-ac0d-8858d1c01182" class="bulleted-list"><li style="list-style-type:disc">Apple price at the time of the trade is 120 and we sell at 90, so we make a total loss of 60. We trade 2 lots, so the loss-per-lot is 30:</li></ul></li></ol><ol type="1" id="574d0404-f5d0-4305-9322-a7535be8d166" class="numbered-list" start="2"><li>PNL from tradeID 10: (100 - 80) * 4 = 80<ul id="3bada3bf-69ae-4688-a094-dc56027f5a6f" class="bulleted-list"><li style="list-style-type:disc">Facebook price at the time of the trade is 80 and we buy at 100, so we make a total loss of 80. We trade 4 lots, so in total we make a loss-per-lot of 20.</li></ul></li></ol><p id="05ef1506-0998-47b0-a59a-56c7aff9302f" class="">For both Facebook and Apple, we do exactly one bad trade which is hence also the worst trade for each instrument.</p><p id="229cb972-db21-407f-882c-29863dbc335c" class="">
+</p></div><div id="8b7d1246-28b0-4683-89d9-89245a6e3619" style="width:93.75000000000001%" class="column"><h3 id="299eb1b7-6973-4459-8be7-143bd1a6ac6b" class=""><mark class="highlight-pink">Sample Case 2</mark></h3><p id="40b0eb33-54b6-4285-b1d0-5c95c5a65424" class=""><strong><mark class="highlight-brown">Sample input for custom testing:</mark></strong></p><blockquote id="6b7806d1-5b75-4578-8740-44607650b93c" class="">10
+PRICE Google 100
+TRADE 1 Google BUY 100 10 
+WORST TRADE Google
+TRADE 2 Google SELL 102 5
+TRADE 3 Google SELL 103 5 
+PRICE Google 98
+WORST TRADE Google
+TRADE 4 Google BUY 101 10 
+TRADE 5 Google BUY 100 10 
+WORST TRADE Google</blockquote><p id="20928d41-3051-4db4-88ea-810ac4f9ba06" class=""><mark class="highlight-brown"><strong>Expected output:</strong></mark></p><blockquote id="d28aef71-81a6-46ba-98b8-0636be0acde0" class="">NO BAD TRADES
+1
+4</blockquote><p id="df346a7e-91f0-46f7-b9d4-e9f59d61b981" class=""><mark class="highlight-brown"><strong>Explanation:</strong></mark></p><p id="f3f9ef81-6d9a-4894-beb7-264923b9933b" class="">First Worst Trade query:</p><ul id="97f74ed0-5fc7-4d91-b5e7-2abb2027453c" class="bulleted-list"><li style="list-style-type:disc">PNL from tradelD 1: (100 - 100) * 10 = 0.</li></ul><ul id="9e32354c-075b-43c1-ba88-3451283520ed" class="bulleted-list"><li style="list-style-type:disc">There are no trades that result in a loss (PNL &lt; 0), so there are no bad trades.</li></ul><p id="0dea4ed0-26fb-425d-b232-3e8ee215bf37" class="">PnLs before second WorstTrade query:</p><ul id="ec0556cc-0468-4226-9442-b3bddacdac86" class="bulleted-list"><li style="list-style-type:disc">PNL from tradelD 1: (98-100) * 10 = -20</li></ul><ul id="e0245ca3-fdb9-4d16-9243-66f9599f43b4" class="bulleted-list"><li style="list-style-type:disc">PNL from tradelD 2: (102 - 98) * 5 = 20</li></ul><ul id="31a3358d-ab11-41c6-a108-4d71ae79ded7" class="bulleted-list"><li style="list-style-type:disc">PNL from tradelD 3: (103 - 98) * 5 = 25</li></ul><p id="63433938-f585-482b-853a-304d5af99511" class="">Second Worst Trade query:</p><ul id="e954f175-a010-4a28-bd9a-7d6a31c8e666" class="bulleted-list"><li style="list-style-type:disc">From the PNL values above, only trade with tradelD 1 results in a loss, so it is indeed the worst trade</li></ul><p id="c1b34cfe-5f77-4a65-9ed8-ee456d945510" class="">PnLs before third WorstTrade query:</p><ul id="9f5b0e36-3374-4ae1-abc8-6174c51aa05e" class="bulleted-list"><li style="list-style-type:disc">Net PNL for tradelD 1, 2, 3: 25</li></ul><ul id="c0c73101-de05-4864-8d25-de99fb4a8557" class="bulleted-list"><li style="list-style-type:disc">PNL from tradelD 4: (98 - 101) * 10 = -30</li></ul><ul id="d2499f0f-b974-4d2d-81d5-5be07198770c" class="bulleted-list"><li style="list-style-type:disc">PNL from tradelD 5: (98-100) * 10 = -20</li></ul><p id="c031f261-e8a7-44de-bfdb-24404b7b64c9" class="">Third Worst Trade query:</p><ul id="411f3188-7068-4a71-9102-b99c3db0344f" class="bulleted-list"><li style="list-style-type:disc">There are 3 trades (tradeID=1,4,5) that result in a loss and the loss per lot for each of them are 2, 3 and 2 respectively.</li></ul><ul id="7d79c54e-4318-4add-b69f-2dcc37be8a39" class="bulleted-list"><li style="list-style-type:disc">So worst trade would be trade with tradeID 4.</li></ul></div></div><pre id="c7b1997b-03a9-4ce7-aa4d-482dc0a62118" class="code"><code>class PnLCalculator:
+    def __init__(self):
+        self.prices = {}
+        self.trades = {}
+        
+
+
+    def process_trade(self, trade_id, instrument_id, buy_sell, price, volume):
+        if instrument_id not in self.trades:
+            self.trades[instrument_id] = [{&quot;TradeID&quot;:trade_id, &quot;BUY/SELL&quot;:buy_sell, &quot;Price&quot;:price, &quot;Volume&quot;:volume}]
+        else:
+            self.trades[instrument_id].append({&quot;TradeID&quot;:trade_id, &quot;BUY/SELL&quot;:buy_sell, &quot;Price&quot;:price, &quot;Volume&quot;:volume})
+        
+    def process_price_update(self, instrument_id, price):
+        self.prices[instrument_id] = price
+        
+    def output_worst_trade(self, instrument_id):
+        badTrades = {}
+
+        curr_price = self.prices[instrument_id]
+        for trade in self.trades[instrument_id]:
+            if trade[&quot;BUY/SELL&quot;] == &quot;BUY&quot;:
+                Pnl = (curr_price - trade[&quot;Price&quot;]) * trade[&quot;Volume&quot;]
+                if Pnl &lt; 0:
+                    badTrades[trade[&quot;TradeID&quot;]] = Pnl
+            elif trade[&quot;BUY/SELL&quot;] == &quot;SELL&quot;:
+                Pnl = (trade[&quot;Price&quot;] - curr_price) * trade[&quot;Volume&quot;]
+                if Pnl &lt; 0:
+                    badTrades[trade[&quot;TradeID&quot;]] = Pnl
+
+        if len(badTrades) == 0:
+            return &quot;No BAD TRADES&quot;
+        elif len(badTrades) == 1:
+            return next(iter(badTrades))
+        else:
+            return min(badTrades, key=badTrades.get)
+        
+
+
+# TEST
+def main():
+    Pnl = PnLCalculator()
+
+    Pnl.process_price_update(&quot;Google&quot;, 100)
+
+    Pnl.process_trade(1, &quot;Google&quot;, &quot;BUY&quot;, 100, 10)
+
+    AppleWorstTrade = Pnl.output_worst_trade(&quot;Google&quot;)
+    print(AppleWorstTrade)
+
+    Pnl.process_trade(2, &quot;Google&quot;, &quot;SELL&quot;, 102, 5)
+
+    Pnl.process_trade(3, &quot;Google&quot;, &quot;SELL&quot;, 103, 5)
+
+    Pnl.process_price_update(&quot;Google&quot;, 98)
+
+    AppleWorstTrade = Pnl.output_worst_trade(&quot;Google&quot;)
+    print(AppleWorstTrade)
+
+    Pnl.process_trade(4, &quot;Google&quot;, &quot;BUY&quot;, 101, 10)
+
+    Pnl.process_trade(5, &quot;Google&quot;, &quot;BUY&quot;, 100, 10)
+    
+    AppleWorstTrade = Pnl.output_worst_trade(&quot;Google&quot;)
+    print(AppleWorstTrade)
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><mark class="highlight-teal">Future Pricing</mark></summary><div class="indented"><h2 id="78991db7-2f4c-4a33-b8d6-51d7bfb9f258" class=""><mark class="highlight-pink">Background</mark></h2><p id="f0a1c0f3-a96c-477b-b0f5-66fbed218003" class="">As a trading firm Optiver trades stocks as well as many derivative instruments such as options and futures. This makes it important for us to be able to calculate future prices of a stock based on the market information we have. Stock prices in the future are affected by dividends - which for the purpose of this problem is a fixed amount that gets paid out on a particular date. Mathematically speaking, if today the stock price is <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span>, and a dividend of amount <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span></span></span></span></span><span>﻿</span></span> is to be paid out <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></span><span>﻿</span></span> days from now, then:</p><ul id="9011bdf2-0acf-4f2e-b28a-75ef89a3e30d" class="bulleted-list"><li style="list-style-type:disc">Future price from today till day <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span><span>﻿</span></span> is <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span></li></ul><ul id="390fae1d-6d44-4d04-930f-570a11e5d388" class="bulleted-list"><li style="list-style-type:disc">Future price from day <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></span><span>﻿</span></span> onwards (including <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></span><span>﻿</span></span>) is <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mo>−</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">S - A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span></span></span></span></span><span>﻿</span></span></li></ul><p id="16ab7cb7-86a8-47fc-86a3-4476068e6d02" class="">Naturally, if there are multiple dividends this has an additive effect. Consider the following example:
+Say the stock price today is S = 1000, and there are 2 dividends:</p><ol type="1" id="84adac1e-6c32-4c5d-a6f9-51d2867214a8" class="numbered-list" start="1"><li>A1 = 100, D1 = 10 days from now,</li></ol><ol type="1" id="26e91675-497a-4a58-87bf-a3da5c3b3212" class="numbered-list" start="2"><li>A2 = 50, D2 = 100 days from now.</li></ol><p id="30f59ad1-3564-4d63-8586-86c22cf7b9fb" class="">Then the future prices varies as follows:</p><ul id="2487792c-7d80-43fd-a7de-0d3f34dce4a2" class="bulleted-list"><li style="list-style-type:disc">1000 from Day 0 (today) to Day 9.</li></ul><ul id="0d9893ea-1446-445d-ab44-27e1005cb947" class="bulleted-list"><li style="list-style-type:disc">900 (= 1000-100) from Day 10 to Day 99.</li></ul><ul id="c7425817-11ba-4595-bbb9-8e3748e77d33" class="bulleted-list"><li style="list-style-type:disc">850 (= 1000-100-50) from Day 100 onwards</li></ul><h2 id="438fee07-fd3a-4533-bcb9-d6dffc7c734e" class=""><mark class="highlight-pink">Problem Statement</mark></h2><p id="082f665c-89f2-4dd1-a041-a538d7483a08" class="">In this problem, you will be given today&#x27;s stock price <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span>, and <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span> dividends - each with an amount <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> and day <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">D_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> from today (1 ≤ i ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span>) as input.
+You will also be asked to perform Q operations. Each operation can be an update or a query. There is only 1 kind of update:</p><ul id="38968b80-4746-49f7-a99c-038b290b0053" class="bulleted-list"><li style="list-style-type:disc">DIVIDEND_UPDATE(<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></span><span>﻿</span></span>) - indicates that <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>i</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">i^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> dividend should be updated from (<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">D_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>) to (<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></span><span>﻿</span></span>).</li></ul><p id="13a2a751-0ce2-4163-91ee-a268010fd069" class="">There is only 1 kind of query:</p><ul id="fdd3de63-7272-4063-b78e-2e191711bd3a" class="bulleted-list"><li style="list-style-type:disc">PRICE(<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span></span><span>﻿</span></span>) - output the future price on day F based on all N dividends.</li></ul><h2 id="ed740df0-8f4b-4f59-9a72-e9f9c60993a3" class=""><mark class="highlight-pink">Function Description</mark></h2><p id="59f82f27-d6a3-4e44-86aa-eb56365f3ecf" class="">Your task is to implement a class that provides <em>UpdateDividend</em> and <em>CalculateFuturePrice</em> methods.</p><p id="c16c5d01-3926-4187-8b8f-9d0bd8d70705" class="">Constraints</p><ul id="767e2be0-271c-42c6-8bb6-20e3d4efbc5b" class="bulleted-list"><li style="list-style-type:disc">1 ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span></span></span></span></span><span>﻿</span></span> ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></li></ul><ul id="de52f201-c482-45c5-8f36-0624994333f6" class="bulleted-list"><li style="list-style-type:disc">1 ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span></span></span></span></span><span>﻿</span></span> ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></li></ul><ul id="ce6b88f8-4048-492f-a278-7fedc629b868" class="bulleted-list"><li style="list-style-type:disc">1 ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span></span><span>﻿</span></span> ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">10^6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></li></ul><ul id="e4aa0660-3fe2-4119-bcd9-0b1663b177c1" class="bulleted-list"><li style="list-style-type:disc">1 ≤ Number of <em>DIVIDEND_UPDATE</em> operations ≤ 500</li></ul><ul id="94ef9ad7-3680-4bfc-9376-74ef569f950a" class="bulleted-list"><li style="list-style-type:disc">1 ≤ Number of PRICE operations ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></li></ul><h2 id="0335380c-2d25-464d-9ecd-b232bbaea776" class=""><mark class="highlight-pink">Input Format For Custom Testing</mark></h2><p id="8844a894-3bd9-4d16-9df9-4d6361fb434a" class="">Input to the program is specified using a simple text format. The format and details of parsing are not relevant to answering the question but custom input can be used to help with development and debugging.
+The first line contains 3 integers: <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span> and <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span></span></span></span></span><span>﻿</span></span>. The next <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span> lines each contain 2 integers <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> and <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">D_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> (1 ≤ i ≤ <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span><span>﻿</span></span>) indicating dividend amounts and dates. Each of the Q subsequent lines contains either an update or a query in the format below:</p><p id="94060abb-828e-41b5-8bc7-a77e11262455" class="">Updates:</p><ul id="e7697efe-86e5-4829-86c6-32c0149dbb2a" class="bulleted-list"><li style="list-style-type:disc">DIVIDEND_UPDATE &lt;/&gt; &lt;Amount&gt; &lt;Days&gt;</li></ul><p id="edf79ced-70b8-4481-8400-1a74eec45e5a" class="">Query:</p><ul id="69efae34-e50d-40a5-aa69-5cc5a2c6fec0" class="bulleted-list"><li style="list-style-type:disc">PRICE &lt;Days&gt;</li></ul><p id="f1ce6346-90b5-4c07-873c-409dfc2d1abb" class="">For each PRICE query, output the future price on a new line.</p><h3 id="f7019fa3-3084-404d-9193-44e9fc584705" class=""><mark class="highlight-pink">Sample Case 1</mark></h3><p id="8a0985ad-f446-4925-8d48-89486173d566" class="">Sample input for custom testing:</p><blockquote id="36554001-d002-4654-b330-e8a35759b641" class="">1000 2 4
+100 10
+50 100
+PRICE 15
+DIVIDEND_UPDATE 2 40 20
+PRICE 15
+PRICE 25</blockquote><p id="f434c7fc-cc89-406f-87f8-919910d03b87" class="">Expected output:</p><blockquote id="2ba77c1e-86cc-446c-bb96-2a6eccd028d0" class="">900
+900
+860</blockquote><p id="8798aa40-ae3b-4d80-ba6a-755c413da99c" class="">Explanation:
+From the input:</p><ul id="b546c6d4-26c3-4a18-a9f3-13348bcea17d" class="bulleted-list"><li style="list-style-type:disc">S = 1000, N = 2, Q = 4</li></ul><ul id="30bf529c-0116-4345-8056-d4bb919d40cf" class="bulleted-list"><li style="list-style-type:disc">(<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">A_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">D_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>) = (100, 10), (<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">A_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">D_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>) = (50, 100)</li></ul><p id="3e5b54fc-e354-4418-a56b-ff632688a4ad" class="">Query 1:</p><ul id="6ed9b49c-8bda-414e-914f-4865c3d2b296" class="bulleted-list"><li style="list-style-type:disc">PRICE 15 =&gt; Future Price = 1000 - 100 = 900</li></ul><p id="5e3d3cfc-f3f0-4779-b32b-efabf7039015" class="">Update 1:</p><ul id="1e21a9e9-a88e-44f2-9360-3a79ff988da0" class="bulleted-list"><li style="list-style-type:disc">DIVIDEND_UPDATE 2 40 20 =&gt; Update (<style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">A_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>D</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">D_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>) from (50, 100) to (40, 20)</li></ul><p id="22e16c0d-25c7-48ed-bad3-42eec3bf7663" class="">Query 2:</p><ul id="0bf94151-3e7d-44b8-bfc1-e2d63907ad7b" class="bulleted-list"><li style="list-style-type:disc">PRICE 15 =&gt; Future Price = 1000 - 100 = 900</li></ul><p id="22903561-43ff-4868-8b9b-a910982b508f" class="">Query 3:</p><ul id="01bbae4c-48de-473f-853e-136386b7211a" class="bulleted-list"><li style="list-style-type:disc">PRICE 25 =&gt; Future Price = 1000-100-40 = 860</li></ul><pre id="592204f2-1bc0-461e-99a8-a39abd7955a9" class="code"><code>class FuturePricing:
+    def __init__(self, S):
+        self.S = S
+        self.dividends = {}
+        self.dividendOrder = []
+    
+    def UpdateDividend(self, i, A, D):
+        if i not in self.dividends:
+            self.dividendOrder.append(i)
+
+        self.dividends[i] = (A,D)
+        self.dividendOrder.sort(key=lambda x: self.dividends[x][1])
+
+        print(self.dividends)
+
+    def CalculateFuturePrice(self, F):
+        futurePrice = self.S
+
+        for i in self.dividendOrder:
+            A, D = self.dividends[i]
+            if D &lt;= F:
+                futurePrice -= A
+
+        return futurePrice
+
+# TEST
+def main():
+    FP = FuturePricing(100)
+
+    FP.UpdateDividend(1, 1, 1)
+    FP.UpdateDividend(2, 2, 2)
+    FP.UpdateDividend(3, 3, 3)
+    FP.UpdateDividend(4, 4, 4)
+    FP.UpdateDividend(5, 5, 5)
+
+    futureprice = FP.CalculateFuturePrice(1)
+    print(futureprice)
+
+    # FP.UpdateDividend(2, 40, 20)
+
+    futureprice = FP.CalculateFuturePrice(2)
+    print(futureprice)
+
+    futureprice = FP.CalculateFuturePrice(3)
+    print(futureprice)
+
+    futureprice = FP.CalculateFuturePrice(4)
+    print(futureprice)
+
+    futureprice = FP.CalculateFuturePrice(5)
+    print(futureprice)
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><mark class="highlight-teal">Truck Positions</mark></summary><div class="indented"><p id="ec5e4fb2-b808-44bf-b3e9-6e75ef2cf9a1" class="">A logistics company has a central software solution to track the position of their trucks. Different applications are interested in different trucks. To save bandwidth the company wants to have a central subscriber for each local office. This service will then be used by the applications in the office to get position updates.
+Your task is to implement the subscriber class. The subscriber can request information from the central server by providing the ID for a truck. The server will return the current position and will afterwards send position updates as differences as they become available. 
+When a client subscribes to a truck the subscriber should return the current truck position. Additionally the client can request an update. In that case the client should receive all the updates for all trucks since it last requested an update. It is important that all updates arrive in the same order as they were initially sent out. Truck positions are represented in x and y coordinates.
+Have a look at the provided source to understand which inputs are provided and which outputs are expected for the Subscriber class. Also be aware that you can call the SubscribeToTruck function of the IServer interface. The input format is defined as follows:</p><ul id="c322b9da-2ffe-4bb2-99fe-cc3fe4b2d20f" class="bulleted-list"><li style="list-style-type:disc">The first row contains one number N: the number of trucks</li></ul><ul id="33ccba76-7551-4b5b-84eb-f8754f2d2d00" class="bulleted-list"><li style="list-style-type:disc">The next N rows contain the initial coordinates of the trucks as two space-separated numbers: X_i and Y_i</li></ul><ul id="a0aae2e0-c03a-452c-8d09-343b1d2d2dd4" class="bulleted-list"><li style="list-style-type:disc">The remaining (arbitrary number of) rows each contain one of three possible commands:<ol type="1" id="017a933c-b982-43c3-a548-2dc42a1f1f05" class="numbered-list" start="1"><li>S &lt;ClientId&gt; &lt;TruckId&gt; means that client with id ClientId subscribes to the truck with ID TruckId.</li></ol><ol type="1" id="579f48da-3b8a-41e3-a17f-86fc5eb287b6" class="numbered-list" start="2"><li>U &lt;TruckId&gt; &lt;delta_x&gt; &lt;delta_y&gt; means that truck with id TruckId moved by delta_x delta_y coordinates.</li></ol><ol type="1" id="975be3da-669f-4034-96ff-55b09a143f1a" class="numbered-list" start="3"><li>R &lt;ClientId&gt; means that the Client with ID ClientId requests position updates.</li></ol></li></ul><p id="02613651-7b68-4a2f-9206-042182643be1" class="">The ouput format is defined as follows:</p><ul id="3b37fb0e-5dd1-443a-8fda-80e64bce8317" class="bulleted-list"><li style="list-style-type:disc">Clients print the answer they get as a subscription request like this<ul id="64ec49a9-568d-4f20-93f1-962590d961be" class="bulleted-list"><li style="list-style-type:circle">S &lt;ClientId&gt; &lt;TruckId&gt; &lt;x_pos&gt; &lt;y_pos&gt;</li></ul></li></ul><ul id="f628d94b-9e7f-4e44-aacd-b7d9eda28efa" class="bulleted-list"><li style="list-style-type:disc">Clients print all updates they get as<ul id="beaa92b6-332b-4ab8-a685-3ff943e63a70" class="bulleted-list"><li style="list-style-type:circle">U &lt;ClientID&gt; &lt;TruckId&gt; &lt;delta_x&gt; &lt;delta_y&gt;</li></ul></li></ul><h3 id="0058bab3-0167-46e0-a662-5a031738e623" class=""><mark class="highlight-pink">Example</mark></h3><p id="7aabec37-5178-499a-bda8-2781e1c5f8e6" class=""><strong><mark class="highlight-brown">Consider the following example input:</mark></strong></p><blockquote id="24bed0cf-f11d-4223-86e2-05c9888cbf5f" class="">1
+2 3
+U 0 1.5 2.5
+S 0 0
+U 0 1 2
+U 0 -0.5 -0.5
+S 1 0
+R 0
+U 0 1 1
+R 1</blockquote><p id="17f4c65c-d493-41d3-b668-d3dc7f66481b" class=""><mark class="highlight-brown"><strong>This should produce the following output:</strong></mark></p><blockquote id="39790465-c1fc-4785-9384-68995f5e398b" class="">S 0 0 3.5 5.5
+S 1 0 4 7
+U 0 0 1 2
+U 0 0 -0.5 -0.5
+U 1 0 1 1</blockquote><p id="391f4219-37fd-44ca-bed8-25a7edbd2d4a" class=""><mark class="highlight-brown"><strong>Explanation</strong></mark><mark class="highlight-brown">:</mark></p><p id="4ce16247-2638-4b2a-b2c6-aadd8591488d" class="">The first line of output is produced when client with ID=0 subscribes to truck with ID=0. At that point truck with ID=0 is at (3.5, 5.5).</p><ul id="b1437fcc-6168-42dd-afe6-09198508f89f" class="bulleted-list"><li style="list-style-type:disc">The second line of output is produced when client with ID=1 subscribes to truck with ID=0. At that point the truck is at (4, 7).</li></ul><ul id="57575d4a-da47-404e-884a-1aaf3c664e93" class="bulleted-list"><li style="list-style-type:disc">The third and fourth line of output are produced when client with ID=0 requests position updates for truck with ID=0. Since there were 2 updates after the subscription, there&#x27;s one lin‍‍‌‍‍‍‍‌‌‍‍‍‍‌‌‍‍‍‍e for each update</li></ul><ul id="9a40a88e-fca3-4694-8df5-91c9ab4615a3" class="bulleted-list"><li style="list-style-type:disc">The fifth line of output is produced when client with ID=1 requests position updates for truck with ID=0. Since there was 1 update after the subscription, there&#x27;s one line of output.</li></ul><div id="0ba86c44-5481-4f80-a5a8-5021fa8ad26c" class="column-list"><div id="fd8e880a-e83f-42e8-a2b6-7f96ab6ad047" style="width:100%" class="column"><h3 id="1224e02a-f26f-4784-b6cc-594a02126c71" class=""><mark class="highlight-pink">Test Case 1</mark></h3><p id="736388e2-e466-4496-aca9-c00095a8b50b" class=""><strong><mark class="highlight-brown">Consider the following example input:</mark></strong></p><blockquote id="0faa84df-67de-4204-b7e6-f2b5fcb472f7" class="">2
+0 0
+10 3
+S 0 0
+U 0 1.3 2
+U 0 2 2
+U 1 1 1.3
+S 0 1
+U 0 2 2
+R 0
+U 0 1 -2
+U 1 -1.1 -1.1
+R 0</blockquote><p id="2ea00151-08c0-4aad-a97d-9a560f607aa7" class=""><mark class="highlight-brown"><strong>This should produce the following output:</strong></mark></p><blockquote id="982a47f0-0d7c-44a4-b105-8dba2c5cded3" class="">S 0 0 0 0
+S 0 1 11 4.3
+U 0 0 1.3 2
+U 0 0 2 2
+U 0 0 2 2
+U 0 0 1 -2
+U 0 1 -1.1 -1.1</blockquote><p id="a9462ba7-59a9-4b82-8917-59d8967a72ba" class="">
+</p></div><div id="fd6ae9c9-a6d8-4cfe-8892-152d3bb2a230" style="width:100%" class="column"><h3 id="981c1336-952b-4217-a9bb-3b4f4d5a9052" class=""><mark class="highlight-pink">Test Case 2</mark></h3><p id="036cc18d-92f1-4503-bc02-ae66ca305b93" class=""><strong><mark class="highlight-brown">Consider the following example input:</mark></strong></p><blockquote id="3c8d80a1-85d6-4c69-ae67-afe740b0c202" class="">1
+0 0
+S 0 0
+U 0 1.3 2
+U 0 2 2
+U 0 2 2
+R 0
+U 0 1 -2
+R 0</blockquote><p id="3bae9570-2016-44d7-abd3-3f6bb4a87f40" class=""><mark class="highlight-brown"><strong>This should produce the following output:</strong></mark></p><blockquote id="5fdd3a2e-cdda-4ac4-9078-5bd4247a69bd" class="">S 0 0 0 0
+U 0 0 1.3 2
+U 0 0 2 2
+U 0 0 2 2
+U 0 0 1 -‍‍‌‍‍‍‍‌‌‍‍‍‍‌‌‍‍‍‍2</blockquote></div><div id="ad4e4369-1552-4f4f-a684-d53f40a44528" style="width:100%" class="column"><p id="1e1badd6-7863-4121-a525-012eb12beaab" class="">
+</p></div></div><pre id="705585a2-76b6-4e83-966e-77bb0fcf5ee4" class="code"><code>from dataclasses import dataclass, replace
+
+@dataclass
+class TruckPosition:
+    x:float
+    y:float
+
+@dataclass
+class TruckPositionDelta:
+    truck_id: int
+    delta_x: float
+    delta_y:float
+
+class Subscriber:
+    def __init__(self, server):
+        self.server = server
+        self.clients = {}
+
+    def process_update(self, update):
+        for trucks in self.clients.values():
+            if update.truck_id in trucks[0]:
+                trucks[1].append(update)
+
+
+    def subscribe_to_truck(self, truck_id, client_id):
+        if client_id not in self.clients:
+            self.clients[client_id] = [set(), []]
+
+        self.clients[client_id][0].add(truck_id)
+
+        return self.server.subscribe_to_truck(truck_id)
+
+    def get_updates(self, client_id):
+        ret = self.clients[client_id][1]
+
+        self.clients[client_id][1] = []
+
+        return ret
+    
+
+class Server:
+    def __init__(self):
+        self.registered_trucks = set()
+        self.current_pos = {}
+
+    def subscribe_to_truck(self, truck_id):
+        self.registered_trucks.add(truck_id)
+        return replace(self.current_pos[truck_id])
+    
+    def add_position(self, truck_id, pos):
+        self.current_pos[truck_id] = pos
+    
+    def on_update(self, subscriber, delta):
+        if delta.truck_id in self.registered_trucks:
+            subscriber.process_update(delta)
+        pos = self.current_pos[delta.truck_id]
+        pos.x += delta.delta_x
+        pos.y += delta.delta_y
+
+class Client:
+    def __init__(self, client_id, subscriber):
+        self.client_id = client_id
+        self.subscriber = subscriber
+
+    def subscribe(self, truck_id):
+        pos = self.subscriber.subscribe_to_truck(truck_id, self.client_id)
+        print(f&quot;S {self.client_id} {truck_id} {pos.x:g} {pos.y:g}&quot;)
+
+    def request_update(self):
+        updates = self.subscriber.get_updates(self.client_id)
+        for delta in updates:
+            print(f&quot;U {self.client_id} {delta.truck_id} {delta.delta_x:g} {delta.delta_y:g}&quot;)
+
+
+def main():
+    server = Server()
+    subs = Subscriber(server)
+    
+    # input
+    server.add_position(0, TruckPosition(0,0))
+    server.add_position(1, TruckPosition(10,3))
+
+    client0 = Client(0, subs)
+    client0.subscribe(0)
+
+    server.on_update(subs, (TruckPositionDelta(0, 1.3, 2)))
+
+    server.on_update(subs, (TruckPositionDelta(0, 2, 2)))
+
+    server.on_update(subs, (TruckPositionDelta(1, 1, 1.3)))
+
+    client0.subscribe(1)
+
+    server.on_update(subs, (TruckPositionDelta(0, 2, 2)))
+
+    print(&quot;request 1&quot;)
+    client0.request_update()
+
+    server.on_update(subs, (TruckPositionDelta(0, 1, -2)))
+
+    server.on_update(subs, (TruckPositionDelta(1, -1.1, -1.1)))
+
+    print(&quot;request 2&quot;)
+    client0.request_update()
+
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre><p id="ffd70dc5-3a3c-4c49-a917-956a5ffe6986" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><mark class="highlight-teal">Lion exhibition</mark></summary><div class="indented"><p id="4ad16ca7-cdbe-484e-bb0d-29a45e77c8c2" class="">As a lion trainer, you are taking part in an international lion exhibition. During the event lions from different teams enter and exit the showroom where lion experts can inspect and score them. Lions do not enter the showroom all at once, as that would cause too much commotion. The organizers of the event are letting them in and out based on a predefined schedule. Before the show starts you get access to the schedule for your lions but not for the others. Nevertheless, during the show, you can observe all lions getting in and out of the room.
+Based on your experience, you believe that judges tend to award the biggest lions in the room with the highest scores. Before the final results are out, you want to estimate your chances of winning this competition.</p><h2 id="2f32a7fc-094e-4ac9-9855-e36fc69980de" class=""><mark class="highlight-pink">Problem Statement</mark></h2><p id="778ca2f6-66cb-46a3-bfad-083e6bd64803" class="">Complete the following functions:</p><ul id="9fa41d62-7ace-42f2-b19f-4027fa849b4f" class="bulleted-list"><li style="list-style-type:disc">The <em>LionCompetition </em>class constructor that accepts lion descriptions and the private schedule of when the lions enter and exit the showroom.</li></ul><ul id="1df02a0c-ea71-463f-b3a6-545a5341a838" class="bulleted-list"><li style="list-style-type:disc">The <em>LionEntered </em>and <em>lionLeft </em>functions that are called whenever a new lion enters or leaves the room.</li></ul><ul id="2d356a88-017c-4972-8b18-4ba05ba9784a" class="bulleted-list"><li style="list-style-type:disc">The getBiggest Lions function that, for the current time, returns a list of our lions in the room that are at least as big as the biggest lion from competing teams in the room. The presented list has to be sorted alphabetically.</li></ul><h2 id="60be054c-5ce4-491c-8f88-e9cecbd8f141" class=""><mark class="highlight-pink">Function definitions</mark></h2><p id="d4dba5c1-4590-4590-af5d-888384d42b1c" class=""><em>LionCompetition </em>class constructor parameters:</p><ul id="dfbfb6f3-e60c-470c-a3ca-80bda969a1e6" class="bulleted-list"><li style="list-style-type:disc">lions - list or elements describing your lions:<ul id="08572b0e-dfcd-4fc1-b196-3781b65838ac" class="bulleted-list"><li style="list-style-type:circle">name - string representing a name of the lion</li></ul><ul id="8dc29d41-c3d3-4b52-be89-6a0d9914b4f2" class="bulleted-list"><li style="list-style-type:circle">height-height of the lion</li></ul></li></ul><ul id="e5b06ca4-0c90-4d9d-aff8-d89c837d9805" class="bulleted-list"><li style="list-style-type:disc">schedule - a private schedule of when your lions enter and leave the show room<ul id="ba001730-a542-43b2-afb9-608d25b68041" class="bulleted-list"><li style="list-style-type:circle">name - string representing a name of the lion</li></ul><ul id="a32e40b7-db6d-41e2-bff0-650db52cd8a0" class="bulleted-list"><li style="list-style-type:circle">enterTime - number of minutes since the start of the show when the lion will enter the room</li></ul><ul id="249c2395-3f19-42a7-9656-f687d9d8a413" class="bulleted-list"><li style="list-style-type:circle">exitTime - number of minutes since the start of the show when the lion will exit the room</li></ul></li></ul><p id="9e10ac18-72a3-4476-a744-14d1afaedd3d" class="">lionEntered function parameters:</p><ul id="93fe1dd7-1f5f-4146-a036-d7b8310fa1bd" class="bulleted-list"><li style="list-style-type:disc">currentTime - number of minutes since the start of the show</li></ul><ul id="a08a03b7-3ba0-447d-bfb3-e04efa342d69" class="bulleted-list"><li style="list-style-type:disc">height-height of the lion that entered the room</li></ul><p id="eb30c5e7-d9ca-43da-890f-df5ecf1eb2bb" class="">lionLeft function parameters:</p><ul id="d9024c23-ffe5-4c52-bda6-1441fe1d1593" class="bulleted-list"><li style="list-style-type:disc">currentTime - number of minutes since the start of the show</li></ul><ul id="4baf04a6-028f-4057-80a7-9ec559a15a6c" class="bulleted-list"><li style="list-style-type:disc">height-height of the lion that left the room</li></ul><h2 id="d6b7ba8a-56c1-438e-9c22-a8d90b9dd45f" class=""><mark class="highlight-pink">Constraints</mark></h2><ul id="7d84c1b8-f99c-414a-81cb-c9fb9d305cf6" class="bulleted-list"><li style="list-style-type:disc">Subsequent invocations of lionLeft and lionEntered functions are always called in order, according to the currentTime parameter.</li></ul><ul id="171c7610-d3a4-464e-aea5-9fea9ffd520c" class="bulleted-list"><li style="list-style-type:disc">The schedule is strictly followed - your lions enter and exit the room exactly at specified times.</li></ul><ul id="fa4e5993-0197-4580-967d-d4ffad164620" class="bulleted-list"><li style="list-style-type:disc">The lion inspection (invocation of the getBiggest Lions function) takes place either before or after all lions scheduled to enter or leave the room at a given minute did that - never in between.</li></ul><ul id="5aeaa356-6987-4320-9734-6d9d4cbaf95f" class="bulleted-list"><li style="list-style-type:disc">Lion names are unique.</li></ul><ul id="48aab78a-0387-4159-88ee-2c4cd6752142" class="bulleted-list"><li style="list-style-type:disc">Times
+(currentTime, enterTime and exitTime) are al ways whole numbers (and multiple events can occur at the same time).</li></ul><ul id="cdd782ad-cfd8-4134-9b19-6320d4b76e67" class="bulleted-list"><li style="list-style-type:disc">A single lion enters the room only once during the show.</li></ul><h2 id="99b37c74-6f0c-4081-ba26-ad7297da4baf" class=""><mark class="highlight-pink">Sample Case</mark></h2><h3 id="847b6f54-7673-4ab1-9491-8769edb46297" class=""><mark class="highlight-brown">Sample Input For Custom Testing</mark></h3><blockquote id="f326551a-4432-4e13-b3cd-91a49b49b955" class="">definition marry 300
+definition rob 250
+schedule marry 10 15
+schedule rob 13 20 
+start
+8 enter 200
+10 enter 310
+10 enter 300
+11 inspect
+13 enter 250
+13 exit 310
+13 insepct
+15 exit 300
+16 inspect
+16 exit 200
+20 exit 250
+21 end</blockquote><h3 id="04d8da79-246f-4b5e-9457-1f4541f9e249" class=""><mark class="highlight-brown">Sample Output</mark></h3><blockquote id="2a95b313-c594-4ffa-8cfa-3194d2e1f9c1" class="">0
+2 marry rob
+1 rob</blockquote><p id="124f960e-f44b-4cf1-acc4-d01bd15d7301" class="">Explanation
+We have two lions:</p><ul id="9a96d108-f7f2-437f-ab46-e5b281fa31b7" class="bulleted-list"><li style="list-style-type:disc">marry with a height of 300cm that enters the show 10 minutes after its start and exits it 15 minutes after its start.</li></ul><ul id="27f45edc-5442-429b-991c-743e411e7c56" class="bulleted-list"><li style="list-style-type:disc">rob with a height of 250cm that enters the show 13 minutes after its start and exits it 20 minutes after its start.</li></ul><p id="d6f20685-40e9-46f4-97f1-a9e5eb2ce311" class="">The show goes as follows:</p><ul id="01146aec-b176-43b2-bab7-03852f30f108" class="bulleted-list"><li style="list-style-type:disc">8 minutes after the start of the show a lion with a height of 200cm enters the room - based on the schedule it is not one of ours.</li></ul><ul id="fa206eb8-594f-4007-9f9e-6787463916ca" class="bulleted-list"><li style="list-style-type:disc">10 minutes after the start of the show two lions enter the room: a 310cm one and a 300cm one. The second one is marry.</li></ul><ul id="b0d2c9e4-b552-4fec-9657-5a35eb3a8138" class="bulleted-list"><li style="list-style-type:disc">We do an inspection, but unfortunately marry is not the biggest lion in the room, so we return an empty list.</li></ul><ul id="03b8331d-3baf-472e-a4f2-901e37465381" class="bulleted-list"><li style="list-style-type:disc">13 minutes after the start of the show rob enters the room and the unknown 310cm lion exits it.</li></ul><ul id="fddb5117-49a1-4049-9dbe-9bd1f9d724e7" class="bulleted-list"><li style="list-style-type:disc">We do an inspection. Both marry and rob are higher than the 200cm height lion that entered the room at the 8th minute of the show, so we return both names.</li></ul><ul id="4fc7da4a-69b2-4302-8884-187bb84be945" class="bulleted-list"><li style="list-style-type:disc">15 minutes after the start of the show marry leaves the room.</li></ul><ul id="c73b713f-e1a0-4688-bfb6-abff340cc347" class="bulleted-list"><li style="list-style-type:disc">We do an inspection. rob is still the biggest lion in the room.</li></ul><ul id="2a1d67d7-35a5-47e2-ac5b-7b73aa0a73a7" class="bulleted-list"><li style="list-style-type:disc">16 and 20 minutes after the start of the show both remaining lions exit the room.</li></ul><p id="d1c6eb86-e9d1-494a-8dc5-d3f7f6df8d03" class="">
+</p><pre id="eb0906bb-39cb-40d9-8b3e-3dcfe7689d45" class="code"><code>from dataclasses import dataclass
+
+@dataclass
+class LionDescription:
+	name: str
+	height: int
+
+@dataclass
+class LionSchedule:
+	name: str
+	enter_time: int
+	exit_time: int
+
+class LionCompetition:
+	def __init__(self, lions: list [LionDescription], schedule: list [LionSchedule]):
+		pass
+
+	def lion_entered (self, current_time: int, height: int): 
+		pass # Enter your code here
+	
+	def lion_left (self, current_time: int, height: int): 
+		pass # Enter your code here
+	
+	def get_biggest_lions (self) -&gt; list[str]: 
+		pass # Enter your code here
+	
+if __name__ == &quot;__main__&quot;:
+ </code></pre></div></details><p id="396e676d-84dc-4ab3-a095-17f8711e8bf9" class="">
+</p></div></article></body></html>
